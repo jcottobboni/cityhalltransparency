@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jobroles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobroles.each do |jobrole| %>
+      <tr>
+        <td><%= jobrole.name %></td>
+        <td><%= link_to 'Show', jobrole %></td>
+        <td><%= link_to 'Edit', edit_jobrole_path(jobrole) %></td>
+        <td><%= link_to 'Destroy', jobrole, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jobrole', new_jobrole_path %>

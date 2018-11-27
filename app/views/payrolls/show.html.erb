@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registration:</strong>
+  <%= @payroll.registration %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @payroll.name %>
+</p>
+
+<p>
+  <strong>Jobrole:</strong>
+  <%= @payroll.jobrole %>
+</p>
+
+<p>
+  <strong>Workspace:</strong>
+  <%= @payroll.workspace %>
+</p>
+
+<p>
+  <strong>Admission date:</strong>
+  <%= @payroll.admission_date %>
+</p>
+
+<p>
+  <strong>Admission type:</strong>
+  <%= @payroll.admission_type %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @payroll.status %>
+</p>
+
+<%= link_to 'Edit', edit_payroll_path(@payroll) %> |
+<%= link_to 'Back', payrolls_path %>

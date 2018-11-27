@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<h2>Import Products</h2>
+<%= form_tag import_payrolls_path, multipart: true do %>
+  <%=select_tag 'city_id', options_for_select(@cities.collect{ |u| [u.name, u.id] })%>
+  <%=select_tag 'department_id', options_for_select(@departments.collect{ |u| [u.name, u.id] })%>
+  <%= number_field_tag :year ,label:"Ano"%>
+  <%= number_field_tag :month,"Mes" %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+<h1>Payrolls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Registration</th>
+      <th>Name</th>
+      <th>Jobrole</th>
+      <th>Workspace</th>
+      <th>Admission date</th>
+      <th>Admission type</th>
+      <th>city_hall_secretary_name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payrolls.each do |payroll| %>
+      <tr>
+        <td><%= payroll.registration %></td>
+        <td><%= payroll.name %></td>
+        <td><%= payroll.jobrole.name %></td>
+        <td><%= payroll.workspace.name %></td>
+        <td><%= payroll.admission_date %></td>
+        <td><%= payroll.admission_type %></td>
+        <td><%= payroll.city_hall_secretary_name %></td>
+        <td><%= link_to 'Show', payroll %></td>
+        <td><%= link_to 'Edit', edit_payroll_path(payroll) %></td>
+        <td><%= link_to 'Destroy', payroll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payroll', new_payroll_path %>
