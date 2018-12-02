@@ -11,6 +11,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require modernizr.min
 //= require jquery.min
 //= require activestorage
 //= require popper.min
@@ -20,7 +21,7 @@
 //= require jquery.slimscroll
 //= require jquery.core
 //= require jquery.app
-//= require modernizr.min
+
 
 //= require plugins/datatable/jquery.dataTables.min
 //= require plugins/datatable/dataTables.bootstrap4.min

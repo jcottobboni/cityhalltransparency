@@ -4,7 +4,8 @@ class PayrollsController < ApplicationController
   # GET /
   # GET /payrolls.json
   def index
-    @payrolls = Payroll.all
+    @q = Payroll.ransack(params[:q])
+    @payrolls = @q.result(distinct: true)
   end
 
   def import_payrolls

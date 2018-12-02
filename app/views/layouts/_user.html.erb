@@ -1,0 +1,28 @@
+
+<% if user_signed_in? %>
+<li class="dropdown notification-list">
+  <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+    <span class="ml-1"><%= current_user.username %> <i class="mdi mdi-chevron-down"></i> </span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+    <!-- item-->
+    <div class="dropdown-item noti-title">
+      <h6 class="text-overflow m-0">Bem Vindo !</h6>
+    </div>
+
+    <!-- item-->
+
+
+    <%= link_to edit_user_password_path ,class: "dropdown-item notify-item" do %>
+        <i class="fi-head"></i> <span>Minha conta</span>
+    <%end %>
+
+    <%= link_to destroy_user_session_path, class: "dropdown-item notify-item",:method => 'delete' do %>
+        <i class="fi-power"></i> <span>Logout</span>
+    <%end %>
+  </div>
+</li>
+
+  <% else %>
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
