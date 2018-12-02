@@ -1,10 +1,13 @@
 class PayrollsController < ApplicationController
   before_action :set_payroll, only: [:show, :edit, :update, :destroy]
-  before_action :set_lists, only: [:index,:new, :edit, :update, :create]
+  before_action :set_lists, only: [:index,:new, :edit, :update, :create,:import_payrolls]
   # GET /
   # GET /payrolls.json
   def index
     @payrolls = Payroll.all
+  end
+
+  def import_payrolls
   end
 
   # GET /payrolls/1

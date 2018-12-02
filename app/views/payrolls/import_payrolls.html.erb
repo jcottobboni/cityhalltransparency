@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<h2>Import Products</h2>
+<%= form_tag import_payrolls_path, multipart: true do %>
+  <%= select_tag 'city_id', options_for_select(@cities.collect {|u| [u.name, u.id]}) %>
+  <%= select_tag 'department_id', options_for_select(@departments.collect {|u| [u.name, u.id]}) %>
+  <%= number_field_tag :year, label: "Ano" %>
+  <%= number_field_tag :month, "Mes" %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+
+

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :payrolls do
     collection do
       post :import
+      get :import_payrolls
     end
   end
   resources :jobroles

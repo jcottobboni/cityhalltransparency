@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -10,7 +11,25 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery.min
 //= require activestorage
-//= require turbolinks
-//= require_tree .
+//= require popper.min
+//= require bootstrap.min
+//= require metisMenu.min
+//= require waves
+//= require jquery.slimscroll
+//= require jquery.core
+//= require jquery.app
+//= require modernizr.min
+
+//= require plugins/datatable/jquery.dataTables.min
+//= require plugins/datatable/dataTables.bootstrap4.min
+//= require plugins/datatable/dataTables.buttons.min
+//= require plugins/datatable/buttons.bootstrap4.min
+//= require plugins/datatable/jszip.min
+//= require plugins/datatable/pdfmake.min
+//= require plugins/datatable/vfs_fonts
+//= require plugins/datatable/buttons.html5.min
+//= require plugins/datatable/buttons.print.min
+//= require plugins/datatable/dataTables.responsive.min
+//= require plugins/datatable/responsive.bootstrap4.min
