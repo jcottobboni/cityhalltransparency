@@ -3,12 +3,15 @@ class PayrollsController < ApplicationController
   before_action :set_lists, only: [:index,:new, :edit, :update, :create,:import_payrolls]
   # GET /
   # GET /payrolls.json
+  add_breadcrumb "Folha de Pagamento", '#'
   def index
+    add_breadcrumb "Listagem", payrolls_path
     @q = Payroll.ransack(params[:q])
-    @payrolls = @q.result(distinct: true)
+    @payrolls = @q.result(distinct: true).includes(:jobrole).includes(:workspace)
   end
 
   def import_payrolls
+    add_breadcrumb "Importar", import_payrolls_payrolls_path
   end
 
   # GET /payrolls/1

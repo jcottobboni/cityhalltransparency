@@ -1,8 +1,14 @@
 <%#= link_to 'New Payroll', new_payroll_path %>
 <%= search_form_for @q do |f| %>
 
-  <%= f.label :name_cont %>
+  <%= f.label :name_cont,'Nome' %>
   <%= f.search_field :name_cont %>
+
+  <%= f.label :jobrole_name_cont ,'Cargo'%>
+  <%= f.search_field :jobrole_name_cont %>
+
+  <%= f.label :workspace_name_cont ,'Local de Trabalho'%>
+  <%= f.search_field :workspace_name_cont %>
 
   <%= f.submit %>
 <% end %>
